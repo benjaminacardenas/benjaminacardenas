@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js"></script>
+    <script src="https://unpkg.com/shards-ui@latest/dist/js/shards.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Sharrre/2.0.1/jquery.sharrre.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto:500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="cotizacion.css">
+
+    <title>Cotiza con Gestión Didáctica</title>
+  </head>
+  <body>
+
+    <div class="container">
+      <div class="row cardbox">
+        <div class="col">
+          
+        </div>
+
+        <div class="col d-flex justify-content-center">
+          <div class="card p-3 mt-3">
+            <div class="card-body text-center">
+              <h1>Cotiza Con Nosotros.</h1>
+            </div>
+            <div class="container">
+              <form action="cotizacion.php" method="post">
+                <div class="form-group">
+                  <label for="formGroupExampleInput">Nombre:</label>
+                  <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Ingrese su Nombre" name="nombre">
+                </div>
+                <div class="form-group">
+                  <label for="formGroupExampleInput2">Teléfono:</label>
+                  <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Ingrese su Telefono" name="telefono">
+                </div>
+                <div class="form-group">
+                  <label for="formGroupExampleInput2">Correo:</label>
+                  <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Ingrese su Correo" name="email">
+                </div>
+
+                <div class="form-group">
+                  <label for="exampleFormControlSelect1">Seleccione un Área:</label>
+                  <select class="form-control" id="type" name="areas">
+                    <option value="item0" selected="selected">Seleccione una Opción</option>
+                    <option value="item1">ÁREA DE GESTIÓN PEDAGÓGICA</option>
+                    <option value="item2">ÁREA DE LIDERAZGO</option>
+                    <option value="item3">ÁREA DE FORMACIÓN Y CONVIVENCIA</option>
+                    <option value="item4">ÁREA DE GESTIÓN DE RECURSOS</option>
+                  </select>
+                </div>
+
+                <div class="form-group">
+                  <label for="exampleFormControlSelect1">Seleccione un Curso</label>
+                  <select class="form-control" id="size" name="cursos">
+                    <option value="">Seleccione una Opción</option>
+                  </select>
+                </div>
+
+
+                <div class="form-group">
+                  <label for="exampleFormControlTextarea1">Consulta</label>
+                  <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="consulta"></textarea>
+                </div>
+                <button type="submit" onclick="window.history.go(-1); return false;" class="btn btn-primary float-left">Volver Atrás</button>
+                <button type="submit" class="btn btn-primary float-right">Enviar Cotización</button>
+              </form>
+            </div>
+          </div>
+        </div>
+
+        <div class="col">
+          
+        </div>
+      </div>
+    </div>
+
+
+    <script>
+                  $(document).ready(function () {
+                      $("#type").change(function () {
+                          var val = $(this).val();
+
+                          if (val == "item1") {
+                              $("#size").html(
+                                "<option value='a1-c1'>Planificación de los aprendizajes</option><option value='a1-c2'>Evaluación inclusiva de los aprendizajes</option><option value='a1-c3'>Estrategias para un aprendizaje colaborativo</option><option value='a1-c4'>Estrategias para un aprendizaje activo</option><option value='a1-c5'>Diseño Universal de los aprendizajes</option><option value='a1-c6'>Gestión de las Bases Curriculares para Educadores de Párvulo</option><option value='a1-c7'>Gestión de los aprendizajes para equipos de Integración</option><option value='a1-c8'>Aprendizaje progresivo para una didáctica inclusiva</option><option value='a1-c9'>Gestión curricular para la innovación en Adecuaciones Curriculares</option><option value='a1-c10'> Gestión e implementación Decreto 67/2018</option>");
+
+                          } else if (val == "item2") {
+                              $("#size").html("<option value='a2-c1'>Neuroeducación para comunidades educativas y la efectividad de la gestión</option><option value='a2-c2'>Liderazgo pedagógico para equipos directivos</option><option value='a2-c3'>Liderazgo pedagógico efectivo para docentes</option><option value='a2-c4'>Liderazgo pedagógico para los equipos de convivencia escolar</option><option value='a2-c5'>Gestión de calidad para la mejora continua</option><option value='a2-c6'>Gestión del cambio y Liderazgo en contexto escolares </option>");
+
+                          } else if (val == "item3") {
+                              $("#size").html("<option value='a3-c1'>Gestión de la Convivencia Escolar en contexto Inclusivos y Participativos</option><option value='a3-c2'>Estrategias para el desarrollo emocional en equipos de aula</option><option value='a3-c3'>Gestión efectiva de Conflictos en contextos inclusivos</option><option value='a3-c4'>Habilidades para una Convivencia Escolar de calidad.</option><option value='a3-c5'>Habilidades para una Resolución Colaborativa de Conflictos en Contexto Escolar</option><option value='a3-c6'>Estrategias de convivencia para asistentes de la educación</option><option value='a3-c7'>Herramientas para el control efectivo del Bullying y Ciberbullying</option><option value='a3-c8'>Estrategias para un aprendizaje colaborativo</option>");
+
+                          } else if (val == "item4") {
+                              $("#size").html("<option value='a4-c1'>Gestión de recursos humanos en contextos escolares para equipos directivos </option><option value='a4-c2'>Gestión de recursos financieros en contexto escolar para equipos directivos</option><option value='a4-c3'>Gestión de RRHH para sostenedores y equipos administrativos</option><option value='a4-c4'>Gestión de recursos financieros para sostenedores y equipos administrativos</option>");
+
+                          } else if (val == "item0") {
+                              $("#size").html("<option value=''>Seleccione una Opción</option>");
+
+                          }
+                      });
+                  });
+                </script>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+  </body>
+</html>
